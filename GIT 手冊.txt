@@ -1,0 +1,18 @@
+新增資料夾 新增檔案 
+git bash 裡輸入 
+git init 
+git add 
+git add .
+git commit -m "備註更動的"
+git remote add origin 網址
+git push -u origin master 
+
+
+
+之後更動
+git add .
+git commit -m "備註更動的"
+git push -u 
+
+
+git push -f  都聽我的
