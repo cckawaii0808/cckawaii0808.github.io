@@ -2478,7 +2478,8 @@ input, select, textarea {
 
 	#banner {
 		position: relative;
-		background-image: url("images/overlay.png"), url("images/overlay.png"), url("../../images/banner.jpg");
+		
+		background-color: rgb(177 227 247 / 86%);
 		background-position: top left, top left, center center;
 		background-repeat: repeat, repeat, no-repeat;
 		background-size: auto, auto, cover;
@@ -2488,7 +2489,7 @@ input, select, textarea {
 
 		#banner .content {
 			position: relative;
-			background-color: rgba(21, 28, 23, 0.85);
+			background-color: rgb(255 130 130 / 38%);
 			background-image: url("images/overlay.png"), url("images/highlight.png");
 			background-position: top left, center center;
 			background-size: auto, 100% 250%;
@@ -2540,7 +2541,7 @@ input, select, textarea {
 
 	#main {
 		background: #fff;
-		border-top: solid 5px #b1ddab;
+		border-top: solid 5px #ffffff;
 		border-bottom: solid 5px #c1cac5;
 		border-top-width: 35px;
 		border-bottom-width: 10px;
