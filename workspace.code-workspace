@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\Downloads\\html5up-txt"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
