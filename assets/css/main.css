@@ -2305,7 +2305,7 @@
                 }
                 
                 #banner .content h2 {
-                    color: rgb(248, 139, 66);
+                    color: white;
                     font-size: 2.75em;
                     margin: 0 0 0.5em 0;
                 }
@@ -2325,7 +2325,7 @@
                     -webkit-transition: border-color .2s ease-in-out, color .2s ease-in-out;
                     -ms-transition: border-color .2s ease-in-out, color .2s ease-in-out;
                     transition: border-color .2s ease-in-out, color .2s ease-in-out;
-                    color: #822cf6;
+                    color: #c2664f;
                     background: transparent !important;
                     border: solid 4px #575d59;
                     border-color: rgba(87, 93, 89, 0.35);
@@ -2333,8 +2333,8 @@
                 }
                 
                 #banner .content .button:hover {
-                    color: #e4e7e5;
-                    border-color: rgba(87, 93, 89, 0.75);
+                    color: #883905;
+                    border-color: rgb(70, 70, 70);
                 }
                 
                 #banner .content .button:active {
