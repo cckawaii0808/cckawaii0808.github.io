@@ -2282,14 +2282,13 @@
                 
                 #banner {
                     position: relative;
-                    background-image: url("images/life.jfif");
+                    background-image: url("images/8.jpg");
                     background-size: cover;
                     background-attachment: fixed;
                     background-color: rgb(177 227 247 / 86%);
-                    background-position: top left, top left, center center;
+                    background-position: center center, center center, center center;
                     background-repeat: repeat, repeat, no-repeat;
-                    background-size: cover, auto, cover;
-                    z-index: 1;
+                    background-size: cover, cover, cover;
                     padding: 11em 0;
                 }
                 
@@ -2306,7 +2305,7 @@
                 }
                 
                 #banner .content h2 {
-                    color: #fff;
+                    color: rgb(248, 139, 66);
                     font-size: 2.75em;
                     margin: 0 0 0.5em 0;
                 }
