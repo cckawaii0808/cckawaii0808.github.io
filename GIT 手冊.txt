@@ -21,10 +21,3 @@ git reset --hard HEAD~n // n 等於往上第幾個提交版本 回復之前指�
 
 git push -f  都聽我的
 
-git add .
-git commit -m "1224-+2"
-git push -u 
-
-git add .
-git commit -m "12/24 改標題加YT"
-git push -u 
