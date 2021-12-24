@@ -2541,7 +2541,7 @@
                         top: 0;
                         width: 100%;
                         z-index: 10001;
-                        background-color: rgba(21, 38, 23, 0.8);
+                        background-color: rgb(128, 199, 240);
                         background-image: url("images/overlay.png");
                     }
                     #titleBar .title {
