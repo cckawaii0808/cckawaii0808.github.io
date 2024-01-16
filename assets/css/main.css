@@ -2286,9 +2286,9 @@
                     background-size: cover;
                     background-attachment: fixed;
                     background-color: rgb(177 227 247 / 86%);
-                    background-position: center center, center center, center center;
+                    background-position: right bottom;
                     background-repeat: repeat, repeat, no-repeat;
-                    background-size: cover, cover, cover;
+                    background-size: no-repeat;
                     padding: 11em 0;
                 }
                 
