@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 作品集
+model Portfolio {
+  id           String   @id @default(cuid())
+  title        String
+  description  String
+  imageUrl     String?
+  projectUrl   String?
+  githubUrl    String?
+  technologies String[]
+  featured     Boolean  @default(false)
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("portfolios")
+}
+
+// 個人資料
+model Profile {
+  id          String  @id @default(cuid())
+  name        String
+  title       String
+  bio         String
+  email       String?
+  avatarUrl   String?
+  githubUrl   String?
+  linkedinUrl String?
+
+  @@map("profiles")
+}
+
+// 技能
+model Skill {
+  id       String @id @default(cuid())
+  name     String
+  category String
+  level    Int    @default(50)
+  order    Int    @default(0)
+
+  @@map("skills")
+}

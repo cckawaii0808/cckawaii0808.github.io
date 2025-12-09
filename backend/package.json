@@ -1,0 +1,35 @@
+{
+  "name": "portfolio-backend",
+  "version": "1.0.0",
+  "description": "Portfolio Backend API",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0"
+  },
+  "devDependencies": {
+    "@prisma/client": "^7.1.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.10.2",
+    "jsonwebtoken": "^9.0.3",
+    "prisma": "^7.1.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

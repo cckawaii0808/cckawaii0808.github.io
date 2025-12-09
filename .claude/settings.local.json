@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx openspec:*)",
+      "Bash(dir:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npx prisma init)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}
