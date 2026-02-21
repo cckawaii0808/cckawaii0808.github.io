@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../views/Home.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -6,58 +7,31 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('@/views/HomeView.vue'),
-    },
-    {
-      path: '/portfolio',
-      name: 'portfolio',
-      component: () => import('@/views/PortfolioView.vue'),
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import('@/views/AboutView.vue'),
+      component: Home,
     },
     {
       path: '/admin',
       name: 'admin',
-      component: () => import('@/views/admin/AdminLayout.vue'),
-      children: [
-        {
-          path: '',
-          name: 'admin-dashboard',
-          component: () => import('@/views/admin/DashboardView.vue'),
-        },
-        {
-          path: 'login',
-          name: 'admin-login',
-          component: () => import('@/views/admin/LoginView.vue'),
-        },
-        {
-          path: 'portfolios',
-          name: 'admin-portfolios',
-          component: () => import('@/views/admin/PortfolioManageView.vue'),
-        },
-        {
-          path: 'profile',
-          name: 'admin-profile',
-          component: () => import('@/views/admin/ProfileEditView.vue'),
-        },
-        {
-          path: 'skills',
-          name: 'admin-skills',
-          component: () => import('@/views/admin/SkillManageView.vue'),
-        },
-      ],
+      component: () => import('../views/Admin.vue'),
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/Login.vue'),
     },
   ],
-  scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { top: 0 }
-    }
-  },
+})
+
+// 簡單的認證守衛
+router.beforeEach((to, _from, next) => {
+  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true'
+  
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next('/login')
+  } else {
+    next()
+  }
 })
 
 export default router

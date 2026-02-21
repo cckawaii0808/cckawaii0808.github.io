@@ -1,0 +1,47 @@
+import type { GlobalThemeOverrides } from 'naive-ui'
+
+export const themeOverrides: GlobalThemeOverrides = {
+  common: {
+    fontFamily: '"Sora", "Noto Sans TC", system-ui, sans-serif',
+    primaryColor: '#2d6a4f',
+    primaryColorHover: '#40916c',
+    primaryColorPressed: '#1b4332',
+    primaryColorSuppl: '#40916c',
+    infoColor: '#0284c7',
+    successColor: '#16a34a',
+    warningColor: '#d97706',
+    errorColor: '#dc2626',
+    bodyColor: '#fafaf9',
+    cardColor: '#ffffff',
+    modalColor: '#ffffff',
+    popoverColor: '#ffffff',
+    textColorBase: '#1a1a2e',
+    textColor1: '#1a1a2e',
+    textColor2: '#3d3d56',
+    textColor3: '#6b7280',
+    borderColor: '#e5e5e0',
+    dividerColor: '#e5e5e0',
+    borderRadius: '10px',
+    borderRadiusSmall: '6px',
+  },
+  Button: {
+    borderRadiusMedium: '8px',
+    borderRadiusLarge: '10px',
+    fontWeight: '600',
+    textColorPrimary: '#FFFFFF',
+    textColorHoverPrimary: '#FFFFFF',
+  },
+  Card: {
+    borderRadius: '12px',
+    boxShadow: '0 1px 2px rgba(0,0,0,0.04)',
+    borderColor: '#e5e5e0',
+    titleFontWeight: '600',
+    paddingMedium: '24px',
+  },
+  Tag: {
+    borderRadius: '5px',
+    fontWeight: '500',
+    heightSmall: '24px',
+    fontSizeSmall: '12px',
+  },
+}
