@@ -6,7 +6,7 @@ export const DEFAULT_PROFILE: Profile = {
   tagline: '不設限的解決問題',
   quote: '做一個對社會有用的人，才有活著的意義',
   location: '台中市',
-  avatar_url: '/img/profile.jpg', // 預設頭像
+  avatar_url: '/img/profile.png', // 預設頭像
   avatar_config: {
     scale: 1.4,
     x: 50,

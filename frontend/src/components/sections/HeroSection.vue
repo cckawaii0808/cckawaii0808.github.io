@@ -76,7 +76,7 @@ async function saveAvatarConfig() {
           <div class="avatar-ring" />
           <div class="avatar-container">
             <img 
-              :src="profile.avatar_url || 'https://avatars.githubusercontent.com/u/161303806?v=4'" 
+              :src="profile.avatar_url" 
               class="hero-avatar-img"
               :style="{
                 transform: `scale(${profile.avatar_config?.scale || 1.4})`,
