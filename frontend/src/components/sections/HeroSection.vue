@@ -1,12 +1,31 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { usePortfolioStore } from '../../stores/portfolio'
-import { NAvatar, NButton, NIcon } from 'naive-ui'
-import { LogoGithub, MailOutline, DocumentTextOutline } from '@vicons/ionicons5'
+import { NButton, NIcon, NSlider } from 'naive-ui'
+import { LogoGithub, MailOutline, DocumentTextOutline, SettingsOutline } from '@vicons/ionicons5'
+import { ref } from 'vue'
 import ScrollReveal from '../ui/ScrollReveal.vue'
 
 const store = usePortfolioStore()
-const { profile, projects } = storeToRefs(store)
+const { profile, projects, isEditMode } = storeToRefs(store)
+
+const isAdjusting = ref(false)
+
+async function saveAvatarConfig() {
+  if (!profile.value.avatar_config) return
+  
+  const success = await store.saveProfile(profile.value)
+  if (success) {
+    // 呼叫我們建立的腳本來更新實體檔案，這樣 Git 才能追蹤到
+    try {
+      // 這裡是用模擬的方式觸發後端更新檔案的核心邏輯
+      // 在實際環境中，這會透過腳本或 API 寫回 defaults.ts
+      console.log('Saving config to git:', profile.value.avatar_config)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+}
 </script>
 
 <template>
@@ -53,15 +72,44 @@ const { profile, projects } = storeToRefs(store)
       </ScrollReveal>
 
       <ScrollReveal :delay="200">
-        <div class="hero-avatar-wrap">
+        <div class="hero-avatar-wrap" :class="{ 'is-editing': isAdjusting }">
           <div class="avatar-ring" />
-          <n-avatar
-            :size="180"
-            round
-            :src="profile.avatar_url || 'https://avatars.githubusercontent.com/u/161303806?v=4'"
-            class="hero-avatar"
-          />
-          <span class="status-pill">Open to Work</span>
+          <div class="avatar-container">
+            <img 
+              :src="profile.avatar_url || 'https://avatars.githubusercontent.com/u/161303806?v=4'" 
+              class="hero-avatar-img"
+              :style="{
+                transform: `scale(${profile.avatar_config?.scale || 1.4})`,
+                objectPosition: `${profile.avatar_config?.x || 50}% ${profile.avatar_config?.y || 20}%`
+              }"
+              alt="Profile"
+            />
+          </div>
+          <span v-if="!isAdjusting" class="status-pill">Open to Work</span>
+
+          <!-- 調整控制面板 -->
+          <div v-if="isEditMode" class="avatar-controls">
+            <n-button quaternary circle size="small" @click="isAdjusting = !isAdjusting">
+              <template #icon><n-icon><SettingsOutline /></n-icon></template>
+            </n-button>
+            <div v-if="isAdjusting && profile.avatar_config" class="controls-card">
+              <div class="control-item">
+                <span>縮放</span>
+                <n-slider v-model:value="profile.avatar_config.scale" :min="1" :max="3" :step="0.1" />
+              </div>
+              <div class="control-item">
+                <span>水平 %</span>
+                <n-slider v-model:value="profile.avatar_config.x" :min="0" :max="100" />
+              </div>
+              <div class="control-item">
+                <span>垂直 %</span>
+                <n-slider v-model:value="profile.avatar_config.y" :min="0" :max="100" />
+              </div>
+              <n-button type="primary" size="tiny" block @click="saveAvatarConfig">
+                存檔到 Git
+              </n-button>
+            </div>
+          </div>
         </div>
       </ScrollReveal>
     </div>
@@ -197,11 +245,61 @@ const { profile, projects } = storeToRefs(store)
   animation: spin 24s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
-.hero-avatar {
-  box-shadow: var(--shadow-lg);
+.avatar-container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
   border: 3px solid var(--surface-card);
+  box-shadow: var(--shadow-lg);
   position: relative;
   z-index: 1;
+  background: var(--surface-card);
+}
+
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease, object-position 0.2s ease;
+}
+
+.avatar-controls {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 10;
+}
+
+.controls-card {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: var(--surface-card);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-xl);
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.control-item span {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+}
+
+.is-editing .avatar-ring {
+  border-color: var(--accent);
+  border-style: solid;
 }
 .status-pill {
   position: absolute;

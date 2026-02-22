@@ -20,7 +20,7 @@ const infoColors = ['accent', 'blue', 'violet', 'amber'] as const
   <section id="about" class="about-section">
     <div class="container">
       <ScrollReveal>
-        <SectionTitle title="關於我" subtitle="背景、經歷與熱情所在" />
+        <SectionTitle title="關於我" subtitle="背景、經歷" />
       </ScrollReveal>
 
       <div class="about-grid">

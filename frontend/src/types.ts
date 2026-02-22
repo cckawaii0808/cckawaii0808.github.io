@@ -10,6 +10,12 @@ export interface Profile {
   github_url: string
   website_url: string
   avatar_url?: string // 新增：頭像網址
+  avatar_config?: {
+    scale: number
+    x: number
+    y: number
+  }
+
   // New "Connect with me" section
   connect_with_me?: {
     text: string

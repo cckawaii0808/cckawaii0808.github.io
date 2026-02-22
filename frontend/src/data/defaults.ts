@@ -6,11 +6,18 @@ export const DEFAULT_PROFILE: Profile = {
   tagline: '不設限的解決問題',
   quote: '做一個對社會有用的人，才有活著的意義',
   location: '台中市',
-  avatar_url: 'https://avatars.githubusercontent.com/u/161303806?v=4', // 預設頭像
+  avatar_url: '/img/profile.jpg', // 預設頭像
+  avatar_config: {
+    scale: 1.4,
+    x: 50,
+    y: 20
+  },
   about_me: `
 我是CC，一個擅長將 **複雜技術語言轉化為業務邏輯** 的全端工程師。
 
-身為 ENFP，我擁有高度的同理心與溝通熱忱。我不僅僅是寫 Code，更熱衷於 **理解使用者背後的真實需求**。主要使用 C# .NET Core 與 Vue 3，並積極運用 **各種AI工具** 例如 Claude Code ,gemini cli ,openclaws 等，在開發流程中的應用。
+MBTI 是ENFP的快樂小狗，擁有高度的同理心與溝通熱忱，不僅是寫 Code，更熱衷於 **理解使用者背後的真實需求**。
+
+主要使用 C# .NET Core 與 Vue 3，並積極運用 **各種AI工具** 例如 Claude Code ,gemini cli ,openclaws 等，在開發流程中的應用。
 
 我喜歡與人互動溝通，擅長學習後分享成大家能懂的語言，也喜歡探索生活中的各種可能性。
 `,
