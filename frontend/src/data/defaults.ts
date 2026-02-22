@@ -2,38 +2,38 @@ import type { Profile, WorkExperience, Skill, Project, Education, Certification,
 
 export const DEFAULT_PROFILE: Profile = {
   full_name: '謝承羲',
-  title: '全端工程師 | 技術與業務的連結者',
-  tagline: '用邏輯構建系統，用感性連結人心',
-  quote: '做一個對社會有用的人，才有活著的意義 ✨',
-  location: '台中市南區 / 駐派華邦電',
+  title: '全端工程師',
+  tagline: '不設限的解決問題',
+  quote: '做一個對社會有用的人，才有活著的意義',
+  location: '台中市',
   avatar_url: 'https://avatars.githubusercontent.com/u/161303806?v=4', // 預設頭像
   about_me: `
-我是承羲，一名擅長將 **複雜技術語言轉化為業務邏輯** 的全端工程師。
+我是CC，一個擅長將 **複雜技術語言轉化為業務邏輯** 的全端工程師。
 
-身為 ENFP，我擁有高度的同理心與溝通熱忱。我不僅僅是寫 Code，更熱衷於 **理解使用者背後的真實需求**。我的技術棧橫跨 C# .NET Core 與 Vue 3，並積極探索 **AI MCP 協議** 在開發流程中的應用。
+身為 ENFP，我擁有高度的同理心與溝通熱忱。我不僅僅是寫 Code，更熱衷於 **理解使用者背後的真實需求**。主要使用 C# .NET Core 與 Vue 3，並積極運用 **各種AI工具** 例如 Claude Code ,gemini cli ,openclaws 等，在開發流程中的應用。
 
-我有房地產與金融投資背景，這訓練了我以 **ROI (投資回報率)** 的思維來審視每一行程式碼的價值。我致力於打造不僅穩定，且能為企業帶來實質效益的軟體解決方案。
-  `,
+我喜歡與人互動溝通，擅長學習後分享成大家能懂的語言，也喜歡探索生活中的各種可能性。
+`,
   total_experience: '3年+ 全端開發經驗',
   github_url: 'https://github.com/cckawaii0808',
   website_url: 'https://cckawaii0808.github.io/',
   connect_with_me: {
-    text: '除了程式與邏輯，我也熱衷於生活中的各種探索。如果你也喜歡羽球、理財或 AI，歡迎隨時找我交流！',
-    hobbies: ['羽球', '金融投資', 'AI 開發', '閱讀'],
+    text: '除了程式與邏輯，我也熱衷於生活中的小事物。喜歡羽球、理財、AI或科技新知，歡迎隨時找我交流！',
+    hobbies: ['羽球', '理財', 'AI 開發', '科技新知'],
   }
 }
 
 export const DEFAULT_WORK_EXPERIENCES: WorkExperience[] = [
   {
     company_name: '緯創軟體 (Wistron ITS)',
-    job_title: '全端工程師 (駐派華邦電)',
+    job_title: '全端工程師',
     industry: '半導體製造 / 企業級系統開發',
-    location: '新竹科管局 / 遠端',
+    location: '',
     start_date: '2026/01',
     end_date: '',
     is_current: true,
-    description: '在大型半導體企業的嚴謹環境下，負責 QM (品質管理) 與 SD (銷售) 模組的系統開發與維護。重點在於 **確保高併發環境下的系統穩定性**，並優化既有 .NET Core + Vue 3 架構，提升維護效率。',
-    technologies: ['C# .NET Core', 'Vue 3', 'MS SQL', 'System Stability', 'Enterprise Architecture'],
+    description: '負責 QM (品質管理) 與 SD (銷售) 模組的系統開發與維護。優化既有 .NET Core + Vue 3 架構，提升維護效率。',
+    technologies: ['C# .NET Core', 'Vue 3', 'MS SQL'],
   },
   {
     company_name: '天思數位科技',
@@ -43,7 +43,7 @@ export const DEFAULT_WORK_EXPERIENCES: WorkExperience[] = [
     start_date: '2023/08',
     end_date: '2026/01',
     is_current: false,
-    description: '主導多個政府與企業客製化系統開發。從需求訪談、資料庫設計到前後端實作，獨立完成 **跨平台整合** (Web + Hybrid App)。成功串接 ChatGPT API 優化內部工作流，並撰寫技術文件降低團隊溝通成本。',
+    description: '撰寫多個政府與企業客製化系統。從前端、後端、資料庫設計到前後端實作，獨立完成或與團隊合作。並帶領團隊成員嘗試新技術與模板',
     technologies: ['Vue.js', 'ASP.NET Core', 'Cordova', 'OpenAI API', 'Gov Projects'],
   },
 ]
@@ -62,15 +62,15 @@ export const DEFAULT_SKILLS: Skill[] = [
     proficiency: 5,
   },
   {
-    category: 'AI 驅動開發 (AI-DD)',
+    category: '規格驅動開發 (SDD)',
     description: '善用 Claude / ChatGPT 結合 MCP 協議，打造高效的自動化開發工作流。不只是使用者，更是 AI 工具的整合者。',
-    tags: ['Prompt Engineering', 'MCP Protocol', 'AI Tools Integration'],
+    tags: ['提示詞工程', 'MCP協議', 'AI工具'],
     proficiency: 4,
   },
   {
     category: '跨領域溝通與協作',
-    description: 'ENFP 特質讓我能輕鬆跨越工程師與 PM/業務 之間的溝通鴻溝。擅長將技術限制轉化為商業決策選項。',
-    tags: ['需求分析', '技術轉譯', '團隊協作', '同理心'],
+    description: '擅長溝通並理解客戶真實的需求，不設限的解決問題，找到不同的解決方案。',
+    tags: ['需求分析', '技術選擇', '團隊協作'],
     proficiency: 5,
   },
 ]
@@ -129,5 +129,5 @@ export const DEFAULT_BIO_SECTIONS: BioSection[] = [
   { title: '特點', text: '思考敏捷,能運用適當工具解決事情,善言詞,具領導能力。會主動關心新進同仁,協助他們上手業務。' },
   { title: '求學階段', text: '大學獨立開發物聯網液肥控制系統,使用 MATLAB 設計使用者介面,交互控制感測器接收並控制信號,最後結合資料庫供日後參考改進作物。' },
   { title: '天思數位科技', text: '負責全端工程師兩年半,網頁維護、Cordova App 維運、政府系統、標管系統、MIS 等客製化系統開發。前端使用 Vue.js,後端使用 ASP.NET Core。' },
-  { title: '目前', text: '任職於緯創軟體,駐派華邦電,持續在全端開發領域深耕,同時積極探索 AI 輔助開發的可能性。' },
+  { title: '目前', text: '任職於緯創軟體,駐派華邦電,持續在全端開發領域深耕,同時積極探索 AI 輔助開發。' },
 ]
