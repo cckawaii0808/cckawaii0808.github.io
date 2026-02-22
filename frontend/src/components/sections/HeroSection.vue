@@ -46,7 +46,7 @@ async function saveAvatarConfig() {
           <div class="hero-actions">
             <n-button type="primary" size="medium" tag="a" href="#contact">
               <template #icon><n-icon :size="16"><MailOutline /></n-icon></template>
-              聯絡我
+              與我聯繫
             </n-button>
             <n-button size="medium" secondary tag="a" :href="profile.github_url" target="_blank">
               <template #icon><n-icon :size="16"><LogoGithub /></n-icon></template>
