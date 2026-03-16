@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Single Page Application redirect for GitHub Pages
+      // When GitHub Pages returns 404 for a SPA route, save the full URL
+      // in sessionStorage and redirect to the root so Vue Router can handle it.
+      sessionStorage.redirect = location.href;
+      location.replace(
+        location.protocol + '//' + location.hostname +
+        (location.port ? ':' + location.port : '') + '/'
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
